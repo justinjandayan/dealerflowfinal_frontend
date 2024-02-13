@@ -24,7 +24,7 @@ function Searchbar() {
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Search..."
+          placeholder="Search by VIN"
           style={{
             width: "100%",
             padding: "8px",
@@ -39,7 +39,7 @@ function Searchbar() {
             padding: "8px 12px",
             borderRadius: "4px",
             border: "none",
-            backgroundColor: "#4f92ffd8",
+            backgroundColor: "#6400ff",
             color: "#fff",
             cursor: "pointer",
             boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
