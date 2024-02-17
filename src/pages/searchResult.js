@@ -15,8 +15,8 @@ function SearchResult() {
   const apiBaseUrl = process.env.REACT_APP_DEALERFLOW_BACKEND_API_BASEURL;
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const [minPrice, setMinPrice] = useState(null);
-  const [maxPrice, setMaxPrice] = useState(null);
+  // const [minPrice, setMinPrice] = useState(null);
+  // const [maxPrice, setMaxPrice] = useState(null);
   const vehiclesPerPage = 8; // Define the number of vehicles per page
 
   useEffect(() => {
@@ -345,24 +345,6 @@ function SearchResult() {
             <div>
               {priceResult.length > 0 ? (
                 <>
-                  <h1
-                    style={{
-                      textAlign: "left",
-                      fontWeight: "900",
-                      color: "#0e1e35",
-                      margin: "50px 0",
-                      fontFamily: "Arial, sans-serif",
-                    }}
-                  >
-                    <i style={{ marginLeft: "55px" }}>
-                      {minPrice && maxPrice
-                        ? minPrice < maxPrice
-                          ? `Vehicle Priced from $${minPrice} to $${maxPrice}`
-                          : `Vehicle Priced from $${maxPrice} to $${minPrice}`
-                        : "Vehicle Price Range not specified"}
-                    </i>
-                  </h1>
-
                   <div className={styles["vehicle-grid"]}>
                     {priceResult.map((vehicle, id) => (
                       <ShowVehicleDeals key={id} vehicle={vehicle} />
@@ -393,24 +375,6 @@ function SearchResult() {
                 </>
               ) : (
                 <div>
-                  <h1
-                    style={{
-                      textAlign: "left",
-                      fontWeight: "900",
-                      color: "#0e1e35",
-                      margin: "50px 0",
-                      fontFamily: "Arial, sans-serif",
-                    }}
-                  >
-                    <i style={{ marginLeft: "55px" }}>
-                      {minPrice && maxPrice
-                        ? minPrice < maxPrice
-                          ? `Vehicle Priced from $${minPrice} to $${maxPrice}`
-                          : `Vehicle Priced from $${maxPrice} to $${minPrice}`
-                        : "Vehicle Price Range not specified"}
-                    </i>
-                  </h1>
-
                   <div className={styles["vehicle-grid"]}>
                     {/* You can display a message or anything else when there are no results */}
                     <p>No results found</p>
