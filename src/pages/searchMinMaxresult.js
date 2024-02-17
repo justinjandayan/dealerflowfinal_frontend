@@ -127,10 +127,15 @@ function SearchResult() {
             <div className={styles["pagination-container"]}>
               <span>Page: {currentPage}</span>
               <div className={styles["pagination-buttons"]}>
-                <button onClick={prevPage} disabled={currentPage === 1}>
+                <button
+                  className="btn btn-primary"
+                  onClick={prevPage}
+                  disabled={currentPage === 1}
+                >
                   Prev Page
                 </button>
                 <button
+                  className="btn btn-primary"
                   onClick={nextPage}
                   disabled={currentPage === totalPages}
                 >
