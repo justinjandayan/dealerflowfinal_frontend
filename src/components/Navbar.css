@@ -78,6 +78,7 @@
 
 span {
   margin-left: 16px;
+  text-align: center;
 }
 
 .logout {
@@ -87,4 +88,22 @@ span {
 .image-black {
   width: 80px;
   height: 80px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  text-align: center;
 }

@@ -23,20 +23,19 @@ function Navbar({ handleLogout }) {
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
         <div className="navbar px-3">
-          <Link
-            to="/vehicle/vehicle-list"
-            style={{ display: "flex", alignItems: "center" }}
-          >
+          <Link to="/vehicle/vehicle-list" className="navbar-logo">
             <img
               className="image-black"
               src={process.env.PUBLIC_URL + "/images/image7.png"}
               alt="logo"
             />
+            <span
+              className="logo-text"
+              style={{ color: "darkblue", fontWeight: "900" }}
+            >
+              DEALER FLOW
+            </span>
           </Link>
-
-          <span className="logo-text">
-            <h1 style={{ margin: 0 }}>DEALER FLOW</h1>
-          </span>
 
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />

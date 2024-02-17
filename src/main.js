@@ -12,6 +12,7 @@ import Manufacturer from "./pages/Manufacturer";
 import Sales from "./pages/sales";
 import SearchResult from "./pages/searchResult";
 import SearchMinMax from "./pages/searchMinMaxresult";
+import Footer from "./components/Footer";
 
 function Main({ handleLogout }) {
   return (
@@ -43,6 +44,7 @@ function Main({ handleLogout }) {
           />
           <Route path="/vehicle/search-min-max" component={SearchMinMax} />
         </Switch>
+        <Footer />
       </Router>
     </>
   );

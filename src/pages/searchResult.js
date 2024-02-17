@@ -15,8 +15,8 @@ function SearchResult() {
   const apiBaseUrl = process.env.REACT_APP_DEALERFLOW_BACKEND_API_BASEURL;
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(0);
-  const [minPrice, setMinPrice] = useState(null); 
-  const [maxPrice, setMaxPrice] = useState(null); 
+  const [minPrice, setMinPrice] = useState(null);
+  const [maxPrice, setMaxPrice] = useState(null);
   const vehiclesPerPage = 8; // Define the number of vehicles per page
 
   useEffect(() => {

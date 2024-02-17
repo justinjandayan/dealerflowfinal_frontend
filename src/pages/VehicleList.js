@@ -8,6 +8,7 @@ function Home() {
   const [vehicles, setVehicles] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [vehiclesPerPage] = useState(8);
+  const [totalPages, setTotalPages] = useState(0);
   const apiBaseUrl = process.env.REACT_APP_DEALERFLOW_BACKEND_API_BASEURL;
 
   const getVehicles = useCallback(async () => {
@@ -20,10 +21,15 @@ function Home() {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },
       });
-      const { models, currentPage: page } = response.data;
+      const {
+        models,
+        currentPage: page,
+        totalPages: totalPagesFromBackend,
+      } = response.data;
       console.log(models);
       setVehicles(models);
       setCurrentPage(page);
+      setTotalPages(totalPagesFromBackend);
     } catch (error) {
       console.log(error);
     }
@@ -46,11 +52,13 @@ function Home() {
       <div className={styles["home-page"]}>
         <h1>CAR LIST</h1>
         <Brandlist />
+
         <div className={styles["vehicle-grid"]}>
           {vehicles.map((vehicle, index) => (
             <Vehicle key={index} vehicle={vehicle} />
           ))}
         </div>
+
         <div className={styles["pagination-container"]}>
           <span>Page: {currentPage}</span>
           <div className={styles["pagination-buttons"]}>
@@ -64,7 +72,7 @@ function Home() {
             <button
               className="btn btn-primary"
               onClick={nextPage}
-              disabled={currentPage}
+              disabled={currentPage === totalPages}
             >
               Next Page
             </button>
